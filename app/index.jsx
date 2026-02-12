@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { FokusButton } from "../components/FokusButton";
 
 const pomodoro = [
   {
@@ -46,9 +47,7 @@ export default function Index() {
             second: "2-digit",
           })}
         </Text>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Começar</Text>
-        </Pressable>
+        <FokusButton />
       </View>
       <View style={styles.footer}>
         <Text style={styles.footerText}>
@@ -100,16 +99,6 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontWeight: "bold",
     textAlign: "center",
-  },
-  button: {
-    backgroundColor: "#B872FF",
-    borderRadius: 32,
-    padding: 10,
-  },
-  buttonText: {
-    textAlign: "center",
-    color: "#021123",
-    fontSize: 18,
   },
   footer: {
     width: "80%",
