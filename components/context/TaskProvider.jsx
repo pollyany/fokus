@@ -48,7 +48,6 @@ export function TasksProvider({ children }) {
         },
       ];
     });
-    // chamar persistencia
   };
 
   const toggleTaskCompleted = (id) => {
@@ -60,25 +59,23 @@ export function TasksProvider({ children }) {
         return t;
       });
     });
-    // chamar persistencia
+  };
+
+  const updateTask = (id, description) => {
+    setTasks((oldState) => {
+      return oldState.map((t) => {
+        if (t.id == id) {
+          t.description = description;
+        }
+        return t;
+      });
+    });
   };
 
   const deleteTask = (id) => {
     setTasks((oldState) => {
       return oldState.filter((t) => t.id != id);
     });
-    // chamar persistencia
-  };
-
-  const updateTask = (id, newDescription) => {
-    setTasks((oldState) =>
-      oldState.map((t) => {
-        if (t.id == id) {
-          return { ...t, description: newDescription };
-        }
-        return t;
-      }),
-    );
   };
 
   return (
